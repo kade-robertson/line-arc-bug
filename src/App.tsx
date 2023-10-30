@@ -1,7 +1,8 @@
 import { MapView } from "@deck.gl/core";
 import DeckGL from "@deck.gl/react";
 import { ViewMode } from "@nebula.gl/edit-modes";
-import { EditableGeoJsonLayer } from "@nebula.gl/layers";
+import { GeoJsonLayer } from "@deck.gl/layers";
+// import { EditableGeoJsonLayer } from "@nebula.gl/layers";
 import { useState } from "react";
 import "./App.css";
 import { WebMercatorViewport } from "deck.gl";
@@ -100,7 +101,7 @@ function App() {
           bearing: 0,
         }}
         layers={[
-          new (EditableGeoJsonLayer as any)({
+          new (GeoJsonLayer as any)({
             id: "layer",
             data,
             mode: new ViewMode(),
